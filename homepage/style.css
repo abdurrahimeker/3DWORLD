@@ -1,0 +1,75 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #fcfcfc;
+    height: 5500px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding-top: 100px;
+}
+#social-bar{
+    width: 100%;
+    height: 40px;
+    padding: 20px;
+    padding-right: 0%;
+    padding-left: 0%;
+    position: fixed;
+    margin-top: -85px;
+}
+#social-bar-logo{
+    color:#848484;
+    width: 161px;
+    height: 30px;
+    font-size:30px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+#social-bar-search{
+    box-shadow: #848484 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    background-color: #ffffffe9;
+    width: 400px;
+    height: 40px;
+    float: right;
+    margin-top: -30px;
+    margin-right: 20px;
+    border-radius: 10px;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+}
+#social-bar-search i{
+    height: 25px;
+    width: 25px;
+    margin-top: 7.5px;
+    margin-right:10px;
+    font-size: 25px;
+    float: right;
+}
+#container{
+    margin: auto;
+    width:90%;
+    height: auto;
+
+}
+#container div{
+    width: 24%;
+    height: auto;
+    float: left;
+    justify-content: space-evenly;
+    margin: 5px;
+}
+#container div img{
+    width: 100%;
+    height: auto;
+    margin-top:10px;
+    border-radius: 5px;
+}
+@media screen and (max-width: 1400px){
+
+}
+@media screen and (max-width: 800px) {
+    
+}
+@media screen and (max-width: 610px) {
+
+}
