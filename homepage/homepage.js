@@ -43,3 +43,15 @@ function readRecordsById(id){
         console.log('error' , error)
     }
 }
+
+function readRecordsByIdDelete(id){
+    try{
+        db.transaction(function(tx){
+            tx.executeSql("DELETE FROM image where id=?",[id],(tx,result)=>{
+                console.log('result' , result.rowsAffected)
+            })
+        })
+    }catch(error){
+        console.log('error','error')
+    }
+}
