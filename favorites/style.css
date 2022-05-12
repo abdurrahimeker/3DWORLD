@@ -19,35 +19,23 @@ body{
 }
 #social-bar-logo{
     color:#848484;
-    width: 161px;
+    width: 294px;
     height: 30px;
     font-size:30px;
     font-weight: bold;
     margin-left: 20px;
-    filter: blur(0px);
-    margin-top: 5px;
 }
 #social-bar-logo a{
     color: #848484;
     text-decoration: none;
 }
-#social-bar-favorites{
-    font-size: 25px;
-    color: #848484;
-    float: right;
-    margin-right:20px;
-    margin-top: -30px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-
-}
-
 #social-bar-search{
     box-shadow: #848484 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     background-color: #ffffffe9;
     width: 400px;
     height: 40px;
     float: right;
-    margin-top: -35px;
+    margin-top: -30px;
     margin-right: 20px;
     border-radius: 10px;
     border-bottom-right-radius: 2px;
