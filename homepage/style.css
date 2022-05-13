@@ -60,7 +60,22 @@ body{
     margin-right:10px;
     font-size: 25px;
     float: right;
+    color: #848484;
 }
+#social-bar-search-input{
+    width: 335px;
+    height: 40px;
+    box-shadow: #848484 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    border-radius: 10px;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    border: 1px;
+    padding-left: 15px;
+    font-size: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #ffffff5b;
+}
+
 #container{
     margin: auto;
     width:90%;
@@ -107,6 +122,13 @@ body{
     #container div{
         width: 48%;
     }
+
+}
+@media screen and (max-width: 850px) {
+    #social-bar-favorites{
+        margin-top: -55px;
+        
+    }
 }
 @media screen and (max-width: 630px) {
     #container div{
@@ -120,6 +142,9 @@ body{
         margin: auto;
         float: none;
         margin-top: 20px;
+    }
+    #social-bar-favorites{
+        margin-top: -85px;
     }
 }
 

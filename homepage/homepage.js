@@ -1,5 +1,5 @@
 let db = window.openDatabase("homepageDb", "1.0", "testdb", 2 * 1024 * 1024)
-
+//tablo ekleme
 function createTable() {
     try{
         db.transaction(function(tx){
@@ -9,12 +9,13 @@ function createTable() {
         console.log('error','error')
     }
 }
-
+//veri ekleme
 function createRecord(){
     db.transaction(function (tx){
         tx.executeSql("INSERT INTO image (id) VALUES  (2)")
     })
 }
+//veri okuma
 function readRecords(){
     try{    
         db.transaction(function (tx){
@@ -29,6 +30,7 @@ function readRecords(){
         console.log('error' , error)
     }
 }
+//Id ile veri okuma
 function readRecordsById(id){
     try{    
         db.transaction(function (tx){
