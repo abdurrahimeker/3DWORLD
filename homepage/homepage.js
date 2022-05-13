@@ -1,18 +1,37 @@
+for(idNumber = 1; idNumber < 12; idNumber++){
+    idNumbers();
+}
+function idNumbers(){
+    document.getElementById("image"+idNumber).addEventListener("click",function(event){
+        console.log(event)
+        var id = event.target.id
+        createRecord(id)
+    })
+}
+document.getElementById("image"+idNumber).addEventListener("click",function(event){
+    console.log(event)
+    var id = event.target.id
+    createRecord(id)
+})
+
+
+
 let db = window.openDatabase("homepageDb", "1.0", "testdb", 2 * 1024 * 1024)
 //tablo ekleme
 function createTable() {
     try{
         db.transaction(function(tx){
-            tx.executeSql("CREATE TABLE IF NOT EXISTS user (id)")
+            tx.executeSql("CREATE TABLE IF NOT EXISTS favorites (id,userId)")
         })
     }catch(error){
         console.log('error','error')
     }
 }
 //veri ekleme
-function createRecord(){
+function createRecord(id){
+    console.log(id)
     db.transaction(function (tx){
-        tx.executeSql("INSERT INTO image (id) VALUES  (2)")
+        tx.executeSql("INSERT INTO favorites (id,userId) VALUES  ('"+id+"','"+id+"')")
     })
 }
 //veri okuma
@@ -45,7 +64,7 @@ function readRecordsById(id){
         console.log('error' , error)
     }
 }
-
+//silme
 function readRecordsByIdDelete(id){
     try{
         db.transaction(function(tx){
