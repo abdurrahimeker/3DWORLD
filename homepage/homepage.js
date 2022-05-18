@@ -69,7 +69,7 @@ function readRecordsById(id){
 function readRecordsByIdDelete(id){
     try{
         db.transaction(function(tx){
-            tx.executeSql("DELETE FROM image where id=?",[id],(tx,result)=>{
+            tx.executeSql("DELETE FROM favorites where id=?",[image1],(tx,result)=>{
                 console.log('result' , result.rowsAffected)
             })
         })
