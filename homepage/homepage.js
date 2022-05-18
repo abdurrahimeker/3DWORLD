@@ -3,7 +3,7 @@ let db = window.openDatabase("homepageDb", "1.0", "testdb", 2 * 1024 * 1024)
 createTable()
 //id kayıt etme
 for(let idNumber = 1; idNumber < 12; idNumber++){
-    idNumbers(idNumber);
+    idNumbers(idNumber)
     readRecordsById("image"+idNumber)
 }
 function idNumbers(idNumber){
@@ -13,8 +13,6 @@ function idNumbers(idNumber){
         createRecord(id)
     })
 }
-
-
 function readRecords(){
     try{    
         db.transaction(function (tx){
@@ -33,7 +31,6 @@ function readRecords(){
 function createTable() {
     try{
         db.transaction(function(tx){
-            console.log("eke")
             tx.executeSql("CREATE TABLE IF NOT EXISTS favorites (id TEXT,UNIQUE(id))")
         })
     }catch(error){
