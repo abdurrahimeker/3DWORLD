@@ -1,16 +1,14 @@
 let db = window.openDatabase("homepageDb", "1.0", "testdb", 2 * 1024 * 1024)
 //veri okuma
-
+createTable()
 //id kayıt etme
-for(idNumbers = 1; idNumbers < 12; idNumbers++){
-    idNumbers();
-    readRecordsById("image"+idNumbers)
-    if (1) {
-        
-    }
+for(let idNumber = 1; idNumber < 12; idNumber++){
+    idNumbers(idNumber);
+    readRecordsById("image"+idNumber)
 }
-function idNumbers(){
-    document.getElementById("image"+idNumbers).addEventListener("click",function(event){
+function idNumbers(idNumber){
+
+    document.getElementById("image"+idNumber).addEventListener("click",function(event){
         console.log(event)
         var id = event.target.id
         createRecord(id)
@@ -36,17 +34,19 @@ function readRecords(){
 function createTable() {
     try{
         db.transaction(function(tx){
-            tx.executeSql("CREATE TABLE IF NOT EXISTS favorites (id,userId)")
+            console.log("eke")
+            tx.executeSql("CREATE TABLE IF NOT EXISTS favorites (id TEXT,UNIQUE(id))")
         })
     }catch(error){
         console.log('error','error')
     }
+
 }
 //veri ekleme
 function createRecord(id){
     console.log(id)
     db.transaction(function (tx){
-        tx.executeSql("INSERT INTO favorites (id,userId) VALUES  ('"+id+"','"+id+"')")
+        tx.executeSql("INSERT INTO favorites (id) VALUES  ('"+id+"')")
     })
 }
 
@@ -69,7 +69,7 @@ function readRecordsById(id){
 function readRecordsByIdDelete(id){
     try{
         db.transaction(function(tx){
-            tx.executeSql("DELETE FROM favorites where id=?",[image1],(tx,result)=>{
+            tx.executeSql("DELETE FROM favorites where id=?",[idNumbers],(tx,result)=>{
                 console.log('result' , result.rowsAffected)
             })
         })
