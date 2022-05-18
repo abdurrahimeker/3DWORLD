@@ -5,7 +5,7 @@ let db = window.openDatabase("homepageDb", "1.0", "testdb", 2 * 1024 * 1024)
 for(idNumber = 1; idNumber < 12; idNumber++){
     idNumbers();
     readRecordsById("image"+idNumber)
-    if (id) {
+    if (1) {
         
     }
 }
