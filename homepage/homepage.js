@@ -2,15 +2,15 @@ let db = window.openDatabase("homepageDb", "1.0", "testdb", 2 * 1024 * 1024)
 //veri okuma
 
 //id kayıt etme
-for(idNumber = 1; idNumber < 12; idNumber++){
+for(idNumbers = 1; idNumbers < 12; idNumbers++){
     idNumbers();
-    readRecordsById("image"+idNumber)
+    readRecordsById("image"+idNumbers)
     if (1) {
         
     }
 }
 function idNumbers(){
-    document.getElementById("image"+idNumber).addEventListener("click",function(event){
+    document.getElementById("image"+idNumbers).addEventListener("click",function(event){
         console.log(event)
         var id = event.target.id
         createRecord(id)
