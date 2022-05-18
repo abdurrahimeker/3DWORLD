@@ -7,7 +7,6 @@ for(let idNumber = 1; idNumber < 12; idNumber++){
     readRecordsById("image"+idNumber)
 }
 function idNumbers(idNumber){
-
     document.getElementById("image"+idNumber).addEventListener("click",function(event){
         console.log(event)
         var id = event.target.id
