@@ -5,7 +5,7 @@ createTable()
 
 function renderImages() {
     let imageDiv = document.createElement("div")
-    for (let index = 1; index > 12; index++) {
+    for (let index = 1; index > 10; index++) {
         const element = document.createElement("img")
         element.id = "image" + index
         imageDiv.append(element)
@@ -15,7 +15,7 @@ function renderImages() {
 }
 
 //id kayıt etme
-for(let idNumber = 1; idNumber < 12; idNumber++){
+for(let idNumber = 1; idNumber < 13; idNumber++){
     idNumbers(idNumber)
     readRecordsById("image"+idNumber)
 }
@@ -44,7 +44,7 @@ function readRecords(){
 function createTable() {
     try{
         db.transaction(function(tx){
-            tx.executeSql("CREATE TABLE IF NOT EXISTS favorites (id TEXT,UNIQUE(id))")
+            tx.executeSql("CREATE TABLE IF NOT EXISTS favorites (id TEXT, UNIQUE(id))")
         })
     }catch(error){
         console.log('error','error')
@@ -55,7 +55,6 @@ function createTable() {
 function createRecord(id){
     console.log(id)
     db.transaction(function (tx){
-        console.log("hebgnh")
         tx.executeSql("INSERT INTO favorites (id) VALUES  ('"+id+"')")
     })
 }

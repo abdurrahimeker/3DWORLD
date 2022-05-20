@@ -112,6 +112,11 @@ body{
     -moz-transform: scale(1.12);
     transform: scale(1.2);
 }
+#container div a i:visited{
+    color: #ffffff;
+    border:3px solid black;
+}
+
 @media screen and (max-width: 1400px){
     #container div{
         width: 32%;
