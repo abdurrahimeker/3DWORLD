@@ -1,5 +1,7 @@
 let db = window.openDatabase("homepageDb", "1.0", "testdb", 2 * 1024 * 1024)
 
+image = "icon-"
+
 let lista = []
 function readRecords(){
     try{    
@@ -12,7 +14,6 @@ function readRecords(){
                     image.src = `/img/img/${result.rows.item(index).id}.${type}`
                     imageDiv.append(image)
                 }
-                
                 document.getElementById("container").append(imageDiv)
             })
         })
@@ -20,6 +21,7 @@ function readRecords(){
         console.log('error' , error)
     }
 }
+
 readRecords()
 
 

@@ -87,7 +87,10 @@ body{
     height: auto;
     float: left;
     justify-content: space-evenly;
-    margin: 5px;
+    margin: 6px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
     
 }
 #container div img{
@@ -103,8 +106,8 @@ body{
     color: rgba(55, 55, 55, 0.703);
     z-index: 2;
     font-size:40px;
-    margin-top: -55px;
-    margin-left:15px;
+    margin-top:25px;
+    margin-left:-45px;
 }
 #container div i:hover{
     -webkit-transform: scale(1.2);
@@ -112,17 +115,17 @@ body{
     -moz-transform: scale(1.12);
     transform: scale(1.2);
 }
-#container div a i:visited{
+#container div i:visited{
     color: #ffffff;
     border:3px solid black;
 }
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1450px){
     #container div{
         width: 32%;
     }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1050px) {
     #container div{
         width: 48%;
     }
@@ -134,7 +137,7 @@ body{
         
     }
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 700px) {
     #container div{
         width: 100%;
         margin-top: 50px;

@@ -1,3 +1,37 @@
+
+for(let q = 1; q < 13; q++){
+    let div =document.createElement('div')
+    div.id='div-'+ q
+    div.addEventListener('click', function(e){
+        let id = e.target.id
+        deletefav()
+    })
+    let img = document.createElement('img')
+    img.id = 'img-'+ q
+    img.src = `/img/img/icon-${q}.jpg`
+    let icon = document.createElement('i')
+    icon.id = 'icon-'+ q
+    icon.classList.add("fa")
+    icon.classList.add("fa-bookmark")
+    icon.classList.add('active')
+
+    div.append(img)
+    div.append(icon)
+
+    document.getElementById("container").append(div)
+}
+
+function deletefav(q){
+    let id = q.split('-')[2]
+    document.getElementById('div-'+id).remove()
+}
+
+
+
+
+
+
+
 let db = window.openDatabase("homepageDb", "1.0", "testdb", 2 * 1024 * 1024)
 //veri okuma
 createTable()
@@ -7,7 +41,7 @@ function renderImages() {
     let imageDiv = document.createElement("div")
     for (let index = 1; index > 10; index++) {
         const element = document.createElement("img")
-        element.id = "image" + index
+        element.id = "icon-" + index
         imageDiv.append(element)
     }
 
@@ -17,15 +51,16 @@ function renderImages() {
 //id kayıt etme
 for(let idNumber = 1; idNumber < 13; idNumber++){
     idNumbers(idNumber)
-    readRecordsById("image"+idNumber)
+    readRecordsById("icon-"+idNumber)
 }
 function idNumbers(idNumber){
-    document.getElementById("image"+idNumber).addEventListener("click",function(event){
+    document.getElementById("icon-"+idNumber).addEventListener("click",function(event){
         console.log(event)
         var id = event.target.id
         createRecord(id)
     })
 }
+// veri okuma
 function readRecords(){
     try{    
         db.transaction(function (tx){
@@ -65,7 +100,7 @@ function readRecordsById(id){
         db.transaction(function (tx){
             tx.executeSql("SELECT * FROM favorites where id=?", [id],(tx,result) =>{
                 for(let index = 0; index < result.rows.length; index++){
-                    console.log('item by id' ,result.rows.item(index))
+                    console.log('image id' ,result.rows.item(index))
 
                 }
             })
@@ -98,12 +133,26 @@ function readRecordsByIdDelete(id){
 
 
 
-
-
-
-
-
-
+// button denemesi
+function readRecords(){
+    try{    
+        db.transaction(function (tx){
+            tx.executeSql("SELECT * FROM favorites", [],(tx,result) =>{
+                let imageDiv = document.createElement('DIV');
+                for(let index = 0; index < result.rows.length; index++){
+                    let image = document.createElement('img')
+                    let type = 'jpg'
+                    image.src = `/img/img/${result.rows.item(index).id}.${type}`
+                    imageDiv.append(image)
+                }
+                document.getElementById("container").append(imageDiv)
+            })
+        })
+    }catch(error){
+        console.log('error' , error)
+    }
+}
+readRecords()
 
 
 
