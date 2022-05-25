@@ -4,7 +4,6 @@ for(let q = 1; q < 13; q++){
     div.id='div-'+ q
     div.addEventListener('click', function(e){
         let id = e.target.id
-        deletefav()
     })
     let img = document.createElement('img')
     img.id = 'img-'+ q
@@ -21,10 +20,7 @@ for(let q = 1; q < 13; q++){
     document.getElementById("container").append(div)
 }
 
-function deletefav(q){
-    let id = q.split('-')[2]
-    document.getElementById('div-'+id).remove()
-}
+
 
 
 
@@ -110,18 +106,6 @@ function readRecordsById(id){
     }
 }
 //silme
-function readRecordsByIdDelete(id){
-    try{
-        db.transaction(function(tx){
-            tx.executeSql("DELETE FROM favorites where id=?",[idNumbers],(tx,result)=>{
-                console.log('result' , result.rowsAffected)
-            })
-        })
-    }catch(error){
-        console.log('error','error')
-    }
-}
-
 
 
 
