@@ -5,7 +5,6 @@ image = "icon-"
 
 
 
-
 function deletefav(id){
     document.getElementById('div-'+id).remove()
 }

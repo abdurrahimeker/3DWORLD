@@ -1,3 +1,67 @@
+let imagecontents = [
+    {
+        imgId: "1",
+        title: "Lamba",
+    },
+    {
+        imgId: "2",
+        title: "dolap",
+    },
+    {
+        imgId: "3",
+        title: "lamba",
+    },
+    {
+        imgId: "4",
+        title: "sehpa",
+    },
+    {
+        imgId: "5",
+        title: "bilgisayar",
+    },
+    {
+        imgId: "6",
+        title: "sandalye",
+    },
+    {
+        imgId: "7",
+        title: "ayna",
+    },
+    {
+        imgId: "8",
+        title: "sürahi",
+    },
+    {
+        imgId: "9",
+        title: "sandalye",
+    },
+    {
+        imgId: "10",
+        title: "motor",
+    },
+    {
+        imgId: "11",
+        title: "motor",
+    },
+    {
+        imgId: "12",
+        title: "robot",
+    },
+    ]
+    let inputValue = document.getElementById("social-bar-search-input").value;
+
+    
+    for (let i = 0; i < imagecontents.length; i++) {
+        let content = imagecontents[i]
+        console.log(content)
+        if(content == inputValue){
+
+        }
+    }
+    
+
+
+
 
 for(let q = 1; q < 13; q++){
     let div =document.createElement('div')
