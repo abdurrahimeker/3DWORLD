@@ -33,7 +33,7 @@ let imagecontents = [
     },
     {
         imgId: "9",
-        title: "sandalye",
+        title: "sehpa",
     },
     {
         imgId: "10",
@@ -48,41 +48,56 @@ let imagecontents = [
         title: "robot",
     },
     ]
-    let inputValue = document.getElementById("social-bar-search-input").value;
-
-    
-    for (let i = 0; i < imagecontents.length; i++) {
-        let content = imagecontents[i]
-        console.log(content)
-        if(content == inputValue){
-
+    function myFunction(){
+        let inputValue = document.getElementById("social-bar-search-input").value;
+        for (let i = 0; i < imagecontents.length; i++) {
+            let content = imagecontents[i].title
+            if(content == inputValue){
+                console.log(imagecontents[i].imgId)
+                let div =document.createElement('div')
+                div.id='div-'+ i
+                let img = document.createElement('img')
+                img.id = 'img-'+ i
+                let icon = document.createElement('i')
+                icon.id = 'icon-'+ i
+                img.src = `/img/img/icon-${imagecontents[i].imgId}.jpg`
+                div.append(img)
+                div.append(icon)
+                document.getElementById("container-search").append(div)
+                document.getElementById("container").style.display="none"
+                icon.classList.add("fa")
+                icon.classList.add("fa-bookmark")
+                icon.classList.add('active')
+                div.addEventListener('click', function(e){
+                    let id = e.target.i
+                })
+            }
         }
+
     }
-    
+    myFunction()
 
 
+    for(let q = 1; q < 13; q++){
+        let div =document.createElement('div')
+        div.id='div-'+ q
+        div.addEventListener('click', function(e){
+            let id = e.target.id
+        })
+        let img = document.createElement('img')
+        img.id = 'img-'+ q
+        img.src = `/img/img/icon-${q}.jpg`
+        let icon = document.createElement('i')
+        icon.id = 'icon-'+ q
+        icon.classList.add("fa")
+        icon.classList.add("fa-bookmark")
+        icon.classList.add('active')
 
+        div.append(img)
+        div.append(icon)
 
-for(let q = 1; q < 13; q++){
-    let div =document.createElement('div')
-    div.id='div-'+ q
-    div.addEventListener('click', function(e){
-        let id = e.target.id
-    })
-    let img = document.createElement('img')
-    img.id = 'img-'+ q
-    img.src = `/img/img/icon-${q}.jpg`
-    let icon = document.createElement('i')
-    icon.id = 'icon-'+ q
-    icon.classList.add("fa")
-    icon.classList.add("fa-bookmark")
-    icon.classList.add('active')
-
-    div.append(img)
-    div.append(icon)
-
-    document.getElementById("container").append(div)
-}
+        document.getElementById("container").append(div)
+    }
 
 
 

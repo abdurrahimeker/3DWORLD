@@ -74,6 +74,7 @@ body{
     font-size: 20px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: #ffffff5b;
+    margin-top: -55px;
 }
 
 #container{
@@ -154,4 +155,82 @@ body{
         margin-top: -85px;
     }
 }
+/* ldfkjhaadsklssssssssssssssssssssssssssssssssssssssssssss */
+#container-search{
+    margin: auto;
+    width:90%;
+    height: auto;
 
+}
+#container-search div{
+    width: 24%;
+    height: auto;
+    float: left;
+    justify-content: space-evenly;
+    margin: 6px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    
+}
+#container-search div img{
+    width: 100%;
+    height: auto;
+    margin-top:10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+#container-search div i{
+    position: absolute;
+    text-decoration: none;
+    color: rgba(55, 55, 55, 0.703);
+    z-index: 2;
+    font-size:40px;
+    margin-top:25px;
+    margin-left:-45px;
+}
+#container-search div i:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);  
+    -moz-transform: scale(1.12);
+    transform: scale(1.2);
+}
+#container-search div i:visited{
+    color: #ffffff;
+    border:3px solid black;
+}
+
+@media screen and (max-width: 1450px){
+    #container-search div{
+        width: 32%;
+    }
+}
+@media screen and (max-width: 1050px) {
+    #container-search div{
+        width: 48%;
+    }
+
+}
+@media screen and (max-width: 850px) {
+    #social-bar-favorites{
+        margin-top: -55px;
+        
+    }
+}
+@media screen and (max-width: 700px) {
+    #container-search div{
+        width: 100%;
+        margin-top: 50px;
+    }
+    #social-bar-logo{
+        margin: auto;
+    }
+    #social-bar-search{
+        margin: auto;
+        float: none;
+        margin-top: 20px;
+    }
+    #social-bar-favorites{
+        margin-top: -85px;
+    }
+}
